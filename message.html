@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Повідомлення — GoIT CS HW-06</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <img src="logo.png" alt="Logo" class="logo">
+        <h1>Залишити повідомлення</h1>
+    </header>
+    <nav>
+        <a href="/">Головна</a>
+        <a href="/message.html">Написати повідомлення</a>
+    </nav>
+    <main>
+        <form action="/message" method="post">
+            <label for="username">Ім'я користувача:</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="message">Повідомлення:</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+
+            <button type="submit">Надіслати</button>
+        </form>
+    </main>
+</body>
+</html>

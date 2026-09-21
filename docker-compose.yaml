@@ -1,0 +1,26 @@
+services:
+  app:
+    build: .
+    container_name: goit-cs-hw-06-app
+    ports:
+      - "3000:3000"
+      - "5000:5000/udp"
+    environment:
+      MONGO_URI: mongodb://mongodb:27017
+      MONGO_DB: messages_db
+      MONGO_COLLECTION: messages
+    depends_on:
+      - mongodb
+    restart: unless-stopped
+
+  mongodb:
+    image: mongo:7
+    container_name: goit-cs-hw-06-mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+    restart: unless-stopped
+
+volumes:
+  mongo_data:
